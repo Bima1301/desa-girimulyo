@@ -1,0 +1,674 @@
+$d-black : #0000;
+$d-greenlight: #4C8674;
+$d-orange: #F5DF99;
+$card-height: 250px;
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+// News
+#news{
+    max-width: 85%;
+}
+
+@media screen and (max-width: 992px) {
+    #news{
+        .card-title{
+            font-size: 25px;
+        }
+        .description{
+            font-size: 18px;
+            font-weight: 200;
+        }
+    }
+}
+
+// Arrow
+#arrow-nav{
+    color: white; 
+    text-decoration: none; 
+
+    .arrow {
+      text-align: center;
+      position: fixed;
+      margin: 0 2vw 2vh 0;
+      padding: 10px;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+    
+      height: 55px; 
+      width: 55px;
+      background-color: #ffdf77;
+      border-radius: 50%;
+    }
+    @media only screen and (min-width: 600px){
+        .arrow {
+            margin: 0 4vw 8vh 0;
+            padding: 10px;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+          
+            height: 55px; 
+            width: 55px;
+            background-color: #ffdf77;
+            border-radius: 50%;
+          }
+    }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
+// NAVIGASI BAR
+nav{
+    background-color: rgba(76, 134, 116, 0.5);
+    z-index: 10000000;
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: .3s;
+
+    .logoimg{
+        width: 38px;
+        height: 44px;
+    }
+    .logo{
+        font-weight: 700;
+        font-size: 15px;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-link{
+        color: white;
+    }
+    .navbar-toggler-icon{
+        filter: invert(100%);
+    }
+    .active{
+        color: $d-orange !important; 
+        font-weight: 600;
+    }
+    @media only screen and (min-width: 600px){
+        z-index: 10000000;
+        position: fixed !important;
+        width: 100%;
+        top: 0;
+        .active{
+            color: $d-orange !important; 
+            font-weight: 600;
+        }
+        .logoimg{
+            width: 54px;
+            height: 60px;
+        }
+        .logo{
+            font-weight: 700;
+            font-size: 25px;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-link{
+        font-size: 19px;
+        &:hover{
+            color: $d-orange;
+        }
+        }
+    }
+    
+}
+// AKHIR NAVIGASI BAR
+
+// SECTION PERTAMA HERO
+.hero-swiper{
+    .swiper-button-next, .swiper-button-prev{
+        --swiper-theme-color: #F5DF99 ;
+    }
+}
+#hero{
+    background: linear-gradient(rgb(76, 134, 116) ,rgba(76, 134, 116, 0) );
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    #hero-gradient{
+        background-image: linear-gradient(rgb(76, 134, 116) ,rgba(76, 134, 116, 0) );
+        height: inherit;
+    }
+    .title{
+        padding: 25px;
+        font-size: calc(1.775rem + 1.5vw);
+    }
+    .sub{
+        margin-top: 250px;
+    }
+    @media only screen and (min-width: 600px){
+        .title{
+            padding: 100px;
+        }
+    }
+}
+// AKHIR SECTION PERTAMA HERO
+
+// SECTION KEDUA INFORMASI
+.section-inform{
+    height: fit-content;
+    background-color: white;
+    overflow-x: hidden;
+    
+    .second-title{
+        height: fit-content;
+        .title-kedua{
+            font-weight: 700 !important;
+            margin-top: 65px;
+        }
+        .underline{
+            margin-top: -25px;
+        }
+    }
+    .cards-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .card-item{
+            max-width: 320px;
+            width: 100%;
+            height: 400px;
+            border-radius: 5%;
+            overflow: hidden;
+            position: relative;
+            
+
+            .card{
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px 15px;
+                width: inherit;
+                height:inherit;
+                justify-content: end;
+
+                .description{
+                    margin: 0;
+                    z-index: 100;
+                    font-weight: normal;
+                }
+            }
+        }
+
+    }
+}
+
+// AWAL SECTION KETIGA
+.section-news{
+    .card{
+        height: 100%;
+        background-image: linear-gradient(rgb(76, 134, 116),#f5e09900), url("/img/kubnas.png");
+        background-position: center;
+        padding: 30px 50px;
+        position: relative;
+        
+        .card-title{
+            font-size: 17px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .description{
+            z-index: 10;
+            font-size: 17px;
+            font-weight: bold;
+
+            p{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-height: 150px;
+            }
+        }
+
+        @media screen and (max-width: 992px){
+            min-height: 300px;
+        
+            .card-title{
+                font-size: 26px;
+            }
+        
+            .description{
+                font-size: 26px;
+            }
+        }
+    }
+}
+// AKHIR SECTION KETIGA
+
+// AWAL SECTION KEEMPAT
+.section-profile{
+    height: fit-content;
+    min-height: 30vh;
+    width: 100%;
+
+    .container-fluid{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 30vh;
+
+        .null{
+            line-height: 30vh;
+        }
+
+        .background-desa{
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            bottom: 0;
+            left: 0;
+            background-image: url("/img/bg-desa.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: cover;
+            z-index: -10;
+        }
+
+        .row{
+            height: 100%;
+            width: 100%;
+        }
+
+        .profile-pic{
+            object-fit: cover;
+            height: 500px;
+        }
+
+        .description{
+            max-width: 100%;
+            padding: 0 40px;
+            display: inline-block;
+            p, figcaption{
+                color: white;
+            }    
+        }
+
+        @media screen and (max-width: 992px) {
+            .profile-pic{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-size: cover;
+                background-position: center top;
+                background-color: #7bb4a1;
+                border: 5px white solid;
+                margin: auto;
+            }
+
+            .description {
+                font-size: 13px;
+            }
+
+            .background-desa{
+                height: 100%;
+            }
+        }
+    }
+
+}
+// AKHIR SECTION KEEMPAT
+
+// AWAL SECTION KELIMA
+.section-statistic{
+    width: 100%;
+    height: fit-content;
+
+    .item{
+        height: 200px;
+        background-color: white;
+        box-shadow: 3px 3px 7px rgb(100, 167, 100),
+                    -3px 3px 7px rgb(100, 167, 100);
+
+        .description{
+            height: 100%;
+            h5, p{
+                font-size: 15px;
+                font-weight: bolder;
+            }
+            span{
+               font-size: 50px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .col{
+            max-width: 40%;
+        }
+    }
+    
+    a{
+        text-decoration: none;
+        color: black;
+
+        .card-stat{
+            height: 80px;
+            min-width: 170px;
+            transition: all 0.3s ease;
+    
+            img{
+                width: 40px;
+                aspect-ratio: 1/1;
+                margin: 0 10px;
+            }
+        }
+    }
+    .card-stat:hover{
+        transform: scale(1.1);
+        box-shadow: 3px 3px 17px rgb(100, 167, 100),
+                    -3px 3px 17px rgb(100, 167, 100);
+    }
+
+    .bg-card{
+        box-shadow: 3px 3px 7px rgb(100, 167, 100),
+                    -3px 3px 7px rgb(100, 167, 100);
+    }
+
+
+}
+// AKHIR SECTION KELIMA
+
+
+// SECTION PERTAMA PAGE TENTANG DESA
+.section-about{
+    .structure-img{
+        // background-image: url("/img/struktur-desa.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        width: 100%;
+        height: 50vh;
+    }
+    .news{
+        height: fit-content;
+        z-index: 10;
+        
+        .description p{
+            font-weight: normal;
+        }
+    }
+}
+
+// SECTION PERTAMA PAGE LOKASI DESA
+.section-location{
+    .description{
+        ul{
+            list-style-type: none;
+        }
+    }
+    .location-img{
+        width: 100%;
+        aspect-ratio: 908/320;
+        padding: 0 20px;
+
+        iframe{
+            width: inherit;
+            height: 40vh;
+        }
+    }
+    .news {
+        height: fit-content;
+    }
+}
+
+// SECTION PERTAMA PAGE GALERI DESA
+.section-galery{
+    .swiper {
+        height: fit-content;
+        padding: 10px 0;
+    }
+    .swiper-wrapper{
+        height: fit-content;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: fit-content;
+    }
+    .swiper-pagination{
+        height: 30px;
+    }
+    .bg-umkm{
+        background-image: url("/img/galeri-desa.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bg-other{
+        background-image: url("/img/galeri-desa.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .card-perangkat{
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 2px 10px rgb(180, 180, 180),
+                    -2px 2px 10px rgb(180, 180, 180);
+
+        img{
+            height: 80%;
+            width: 100%;
+            object-fit: cover;
+            background-color: red;
+            object-position: 50% 30%;
+        }
+        .description{
+            height: 20%;
+        }
+    }
+    .news .card{
+        height: fit-content;
+    }
+}
+
+// SECTION PAGE UMKM
+.section-umkm{
+    .container-custom{
+        width: 100%;
+    }
+    .list-container{
+        width: 100%;
+    }
+    .swiper {
+        height: 50vh;
+        max-height: 500px;
+
+        .swiper-pagination{
+            height: 30px;
+        }
+    }
+    .card-umkm{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #4C8674;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4),
+                    -3px 3px 8px rgba(0, 0, 0, 0.4);
+
+        img{
+            width: 50%;
+            object-fit: cover;
+            border-radius: 0 30px 30px 0;
+        }
+        .description{
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .card-umkm{
+    
+            img{
+                width: 100%;
+                height: 60%;
+                object-fit: cover;
+                border-radius: 0 0 30px 30px;
+            }
+            .description{
+                color: white;
+                padding: 25px;
+            }
+        }
+    }
+
+    .news .card{
+        height: fit-content;
+    }
+    .product-desc{
+        height: 40vh;
+        background-image: url("/img/bg-desa.png");
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        img{
+            object-fit: contain;
+
+        }
+
+        figcaption{
+            color: black;
+        }
+    }
+}
+
+// SECTION STAT PEKERJAAN
+.section-jobs{
+    .container-custom{
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+    }
+    .news .card{
+        height: fit-content;
+    }
+}
+
+.section-blog{
+
+    img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: 50% 50%;
+        margin: 20px 0;
+        border-radius: 20px;
+        box-shadow: 2px 2px 10px rgb(99, 99, 99),
+                    -2px 2px 10px rgb(99, 99, 99);
+    }
+}
+
+// SECTION HERO BG
+#hero-profil{
+    background-image: url("/img/balai-desa.png");
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    #hero-gradient{
+        background-image: linear-gradient(rgb(76, 134, 116) ,rgba(76, 134, 116, 0.4) );
+        height: inherit;
+    }
+    .title{ 
+        margin-top: 90px;
+    }
+
+    @media only screen and (min-width: 600px){
+        .title{
+            margin-top: 150px;
+        }
+    }
+}
+
+// BLOG USER
+section{
+    .blogUser{
+        margin-top: 70px;
+    }
+}
+// AKHIR BLOG USER
+
+// FOOTER
+footer{
+    position: static;
+    bottom: 0;
+    width:100%;
+    height: fit-content;
+    background-color: $d-greenlight;
+    color: white;
+    .title{
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    .imgFooter{
+        width: 27px;
+        height: 27px;
+    }
+    
+    @media only screen and (min-width: 600px){
+        .kotak-ikuti{
+            width: 45%;
+        }
+    }
+}
+
+.titleFoot{
+    p{
+        font-size: 10px;
+        
+        img{
+            width: 10px;
+            height: 10px;
+        }
+    }
+    @media only screen and (min-width: 600px){
+        p{
+            font-size: medium;
+        }
+        img{
+            width: 16px; 
+            height: 16px;
+        }
+    }
+}
+
+// AKHIR FOOTER
